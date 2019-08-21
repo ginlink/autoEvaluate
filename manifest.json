@@ -1,0 +1,42 @@
+{
+  "manifest_version": 2,
+  "name": "autoEvaluate",
+  "version": "1.0.0",
+  "description": "一个简单的德育分自动评分插件",
+  "icons": {
+    "16": "public/img/icon.png",
+    "48": "public/img/icon.png",
+    "128": "public/img/icon.png"
+  },
+  "background": {
+    "page": "public/background.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "public/js/content.js"
+      ]
+    }
+  ],
+
+  "browser_action":{
+    "default_icon": "public/img/icon.png",
+    "default_title":"autoEvluate自动评价",
+    "default_popup": "public/popup.html"
+  },
+
+  "permissions": [
+    "tabs",
+    "storage",
+    "http://*/*",
+    "https://*/*"
+  ],
+
+  "options_ui":{
+    "page": "public/options.html",
+    "chrome_style":true
+  }
+}
